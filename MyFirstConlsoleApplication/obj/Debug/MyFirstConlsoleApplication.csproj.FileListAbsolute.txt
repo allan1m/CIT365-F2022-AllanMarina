@@ -1,0 +1,8 @@
+C:\Users\allan\source\repos\CIT365-F2022-AllanMarina\MyFirstConlsoleApplication\bin\Debug\MyFirstConlsoleApplication.exe.config
+C:\Users\allan\source\repos\CIT365-F2022-AllanMarina\MyFirstConlsoleApplication\bin\Debug\MyFirstConlsoleApplication.exe
+C:\Users\allan\source\repos\CIT365-F2022-AllanMarina\MyFirstConlsoleApplication\bin\Debug\MyFirstConlsoleApplication.pdb
+C:\Users\allan\source\repos\CIT365-F2022-AllanMarina\MyFirstConlsoleApplication\obj\Debug\MyFirstConlsoleApplication.csproj.AssemblyReference.cache
+C:\Users\allan\source\repos\CIT365-F2022-AllanMarina\MyFirstConlsoleApplication\obj\Debug\MyFirstConlsoleApplication.csproj.SuggestedBindingRedirects.cache
+C:\Users\allan\source\repos\CIT365-F2022-AllanMarina\MyFirstConlsoleApplication\obj\Debug\MyFirstConlsoleApplication.csproj.CoreCompileInputs.cache
+C:\Users\allan\source\repos\CIT365-F2022-AllanMarina\MyFirstConlsoleApplication\obj\Debug\MyFirstConlsoleApplication.exe
+C:\Users\allan\source\repos\CIT365-F2022-AllanMarina\MyFirstConlsoleApplication\obj\Debug\MyFirstConlsoleApplication.pdb
