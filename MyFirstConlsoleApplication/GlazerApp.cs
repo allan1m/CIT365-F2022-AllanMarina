@@ -17,6 +17,8 @@ namespace MyFirstConsoleApplication
          */
         public static void RunExample()
         {
+            Console.WriteLine("Glazer App: ");
+
             double width, height, woodLength, glassArea;
             string widthString, heightString;
 

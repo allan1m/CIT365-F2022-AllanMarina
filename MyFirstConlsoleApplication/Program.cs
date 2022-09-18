@@ -18,6 +18,7 @@ namespace MyFirstConsoleApplication
             Console.WriteLine("\n");
             // 5.6 Call the RunExample method from the Program Class under Main and place it beneath the  ChristmasCountdown call.
             GlazerApp.RunExample();
+            Console.Read();
         }
         /*  3. In the Program.cs class file, create a new private method called "GetUserNameAndLocation".
             3.1 Create a new instance of the Person class and give the instance a variable name of "person".
@@ -38,8 +39,8 @@ namespace MyFirstConsoleApplication
             person.location = Console.ReadLine();
 
             Console.WriteLine($"I have never been to {person.location}. I bet it is nice. Press any key to continue...");
-
-            Console.Read();
+            Console.ReadKey(true);
+            Console.Write("\n");
         }
         /*
          * 4. In the Program.cs class file, create a new private method called "ChristmasCountdown"
@@ -58,8 +59,8 @@ namespace MyFirstConsoleApplication
               4.5 Using String Interpolation, output your variable like so "There are ___ days until Christmas!"
             */
             Console.WriteLine($"Today's date is: {currentDate.ToString("MM/dd/yyyy")}. There are {daysUntilXMas} days until Christmas! Press any key to continue.");
-
-            Console.Read();
+            Console.ReadKey(true);
+            Console.Write("\n");
 
         }
     }
