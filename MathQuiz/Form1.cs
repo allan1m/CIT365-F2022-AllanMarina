@@ -44,6 +44,8 @@ namespace MathQuiz
                 // If CheckTheAnswer() returns true, then the user 
                 // got the answer right. Stop the timer  
                 // and show a MessageBox.
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"c:\windows\media\Ring10.wav");
+                player.Play();
                 timer1.Stop();
                 MessageBox.Show("You got all the answers right!",
                                 "Congratulations!");
@@ -63,6 +65,8 @@ namespace MathQuiz
                 // If the user ran out of time, stop the timer, show
                 // a MessageBox, and fill in the answers.
                 timer1.Stop();
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"c:\windows\media\Ring02.wav");
+                player.Play();
                 timeLabel.Text = "Time's up!";
                 MessageBox.Show("You didn't finish in time.", "Sorry!");
                 sum.Value = addend1 + addend2;
