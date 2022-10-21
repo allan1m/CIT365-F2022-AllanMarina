@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesMovie.Data;
 using RazorPagesMovie.Models;
@@ -20,13 +21,41 @@ namespace RazorPagesMovie.Pages.Movies
         }
 
         public IList<Movie> Movie { get;set; } = default!;
+        //This is required for binding on HTTP GET requests.
+        [BindProperty(SupportsGet = true)]
+        //SearchString contains the text that users enters in the search text box
+        public string? SearchString { get; set; }
+        //Genres contains the list of genres.
+        //Microsoft.AspNetCore.Mvc.Rendering is required to use SelectList.
+        public SelectList? Genres { get; set; }
+        //The BindProperty binds form values and query strings with the same name as the property.
+        [BindProperty(SupportsGet = true)]
+        //MovieGenre contains the particular genres the user has selected.
+        public string? MovieGenre { get; set; }
+
 
         public async Task OnGetAsync()
         {
-            if (_context.Movie != null)
+            // Use LINQ to get list of genres.
+            //The following code is a LINQ query that retrieves all the genres from the database.
+            IQueryable<string> genreQuery = from m in _context.Movie
+                                            orderby m.Genre
+                                            select m.Genre;
+
+            var movies = from m in _context.Movie
+                         select m;
+
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                Movie = await _context.Movie.ToListAsync();
+                movies = movies.Where(s => s.Title.Contains(SearchString));
             }
+
+            if (!string.IsNullOrEmpty(MovieGenre))
+            {
+                movies = movies.Where(x => x.Genre == MovieGenre);
+            }
+            Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
+            Movie = await movies.ToListAsync();
         }
     }
 }
