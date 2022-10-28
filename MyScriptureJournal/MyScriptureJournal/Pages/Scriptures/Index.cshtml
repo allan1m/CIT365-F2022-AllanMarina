@@ -1,0 +1,86 @@
+﻿@page
+@model MyScriptureJournal.Pages.Scriptures.IndexModel
+
+@*
+    The following markup is an example of Razor transitioning into C#. The { and } characters enclose a block of C# code.
+*@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+@*
+    The DisplayNameFor HTML Helper inspects the Book property referenced in 
+    the lambda expression to determine the display name. The lambda expression
+    is inspected rather than evaluated. That means there is no access violation 
+    when model, model.Scripture, or model.Scripture[0] is null or empty. When the lambda 
+    expression is evaluated, for example, with @Html.DisplayFor(modelItem => item.Book), 
+    the model's property values are evaluated.
+*@
+
+@*
+    Form Tag Helper. When the form is submitted, the filter string is sent to the Pages/Movies/Index page via query string.
+*@
+<form>
+    <p>
+        <select asp-for="BookVerse" asp-items="Model.Verse">
+            <option value="">All</option>
+        </select>
+        Book: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Book)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Verse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].DateAdded)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Scripture) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Verse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            @*
+            Tag Helpers enable server-side code to participate in creating and 
+            rendering HTML elements in Razor files.
+            In the preceding code, the Anchor Tag Helper dynamically generates the 
+            HTML href attribute value from the Razor Page (the route is relative), 
+            the asp-page, and the route identifier (asp-route-id)
+            *@
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

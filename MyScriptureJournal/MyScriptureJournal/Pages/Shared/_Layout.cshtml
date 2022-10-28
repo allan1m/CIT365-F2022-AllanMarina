@@ -3,18 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MyScriptureJournal</title>
+    <title>@ViewData["Title"] - Scripture</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MyScriptureJournal.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <!-- This file configures the UI elements common to all pages. This file sets up navigation
-         menu at the top of the page and the copyright notice at the bottom of the page -->
+    @*
+    Each page shows the same menu layout. The menu layout is implemented in the Pages/Shared/_Layout.cshtml file.
+    Layout templates allow the HTML container layout to be:
+    Specified in one place.
+    Applied in multiple pages in the site.
+    *@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">MyScriptureJournal</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Scriptures/Index">Scriptures</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -32,6 +36,9 @@
             </div>
         </nav>
     </header>
+    @*
+    RenderBody is a placeholder where all the page-specific views show up, wrapped in the layout page.
+    *@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

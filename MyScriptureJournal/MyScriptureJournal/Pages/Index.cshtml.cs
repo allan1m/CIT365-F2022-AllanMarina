@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-//Index file that has c# code that handles page events.
-
 namespace MyScriptureJournal.Pages
 {
+    //Index file that has C# code that handles page events
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;

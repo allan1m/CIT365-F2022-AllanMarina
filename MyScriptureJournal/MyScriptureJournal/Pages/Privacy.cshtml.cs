@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-//Privacy file that has c# code that handles page events.
-
 namespace MyScriptureJournal.Pages
 {
+    //Privacy file that has C# code that handles page events
     public class PrivacyModel : PageModel
     {
         private readonly ILogger<PrivacyModel> _logger;
