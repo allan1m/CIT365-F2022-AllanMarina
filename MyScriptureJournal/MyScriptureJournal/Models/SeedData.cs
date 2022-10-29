@@ -26,34 +26,38 @@ namespace MyScriptureJournal.Models
                 context.Scripture.AddRange(
                     new Scripture
                     {
-                        Book = "When Harry Met Sally",
                         DateAdded = DateTime.Parse("1989-2-12"),
-                        Verse = "Romantic Comedy",
-                        Notes = "I love this verse"
+                        Book = "The Bible",
+                        Chapter = "Genesis",
+                        Verse = "God created the heavens and the earth.",
+                        Notes = "This is the beginning of the bible"
                     },
 
                     new Scripture
                     {
-                        Book = "Ghostbusters ",
-                        DateAdded = DateTime.Parse("1984-3-13"),
-                        Verse = "Comedy",
-                        Notes = "I love this verse"
+                        DateAdded = DateTime.Parse("1989-2-12"),
+                        Book = "The Book of Mormon",
+                        Chapter = "1 Nephi",
+                        Verse = "Nephi begins the record of his people",
+                        Notes = "This is the beginning of the the book of mormon"
                     },
 
                     new Scripture
                     {
-                        Book = "Ghostbusters 2",
-                        DateAdded = DateTime.Parse("1986-2-23"),
-                        Verse = "Comedy",
-                        Notes = "I love this verse"
+                        DateAdded = DateTime.Parse("1989-2-12"),
+                        Book = "The Book of Mormon",
+                        Chapter = "1 Nephi",
+                        Verse = "Lehi takes his family into the wilderness by the Red Sea",
+                        Notes = "Second chapter"
                     },
 
                     new Scripture
                     {
-                        Book = "Rio Bravo",
-                        DateAdded = DateTime.Parse("1959-4-15"),
-                        Verse = "Western",
-                        Notes = "I love this verse"
+                        DateAdded = DateTime.Parse("1989-2-12"),
+                        Book = "The Book of Mormon",
+                        Chapter = "1 Nephi",
+                        Verse = "Lehi's sons return to Jerusalem to obtain the plates of brass",
+                        Notes = "Third chapter"
                     }
                 );
                 context.SaveChanges();

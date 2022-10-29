@@ -8,7 +8,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Scriptures</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -27,10 +27,22 @@
 *@
 <form>
     <p>
+        Notes: <input type="text" asp-for="SearchString" />
+
+        Book
+        <select asp-for="BookBook" asp-items="Model.Book">
+            <option value="">All</option>
+        </select>
+
+        Chapter
+        <select asp-for="BookChapter" asp-items="Model.Chapter">
+            <option value="">All</option>
+        </select>
+
+        Verse   
         <select asp-for="BookVerse" asp-items="Model.Verse">
             <option value="">All</option>
         </select>
-        Book: <input type="text" asp-for="SearchString" />
         <input type="submit" value="Filter" />
     </p>
 </form>
@@ -40,6 +52,9 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Scripture[0].Book)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Chapter)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Scripture[0].Verse)
@@ -58,6 +73,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Book)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chapter)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Verse)
