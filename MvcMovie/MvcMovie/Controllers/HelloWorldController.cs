@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
-using System.Xml.Linq;
 
 namespace MvcMovie.Controllers
 {
@@ -13,9 +12,6 @@ namespace MvcMovie.Controllers
         {
             return View();
         }
-
-        // 
-        // GET: /HelloWorld/Welcome/ 
 
         public IActionResult Welcome(string name, int numTimes = 1)
         {
