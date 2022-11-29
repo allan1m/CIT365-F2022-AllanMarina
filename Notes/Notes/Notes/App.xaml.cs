@@ -1,8 +1,4 @@
-﻿using Notes.Services;
-using Notes.Views;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace Notes
 {
@@ -12,8 +8,6 @@ namespace Notes
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
